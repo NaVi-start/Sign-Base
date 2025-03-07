@@ -90,7 +90,7 @@ class ACD_Denoiser(nn.Module):
 
         # Apply each layer to the input
         for layer in self.layers:
-            x = layer(x=x, memory=encoder_output,
+            x = layer(x=x, memory=condition,
                       src_mask=src_mask, trg_mask=sub_mask, padding_mask=padding_mask)
 
         # Apply a layer normalisation
